@@ -4,7 +4,7 @@ require "africastalking/message"
 require "africastalking/response"
 require "africastalking/airtime"
 require "africastalking/version"
-require "africastalking/AfricasTalkingGateway"
+require "africastalking/user_data"
 
 module Africastalking
 
