@@ -29,7 +29,7 @@ module Africastalking
 
       # TODO: SYMBOLS VS STRINGS
       def validate_attributes(attrbs, data)
-        attrbs.first.each do |value|
+        attrbs.each do |value|
           fail "#{value} can not be blank!" if value_present?(data, value)
         end
       end
@@ -41,7 +41,7 @@ module Africastalking
 
       def build_subscription(data)
         {
-          username: data.fetch(:username), keyword: data.fetch(:keyword),
+          username: Africastalking.config.username, keyword: data.fetch(:keyword),
           phoneNumber: data.fetch(:phone_number), shortCode: data.fetch(:short_code)
         }
       end
