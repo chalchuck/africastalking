@@ -4,13 +4,12 @@ module Africastalking
 
 		headers
 		format :json
-		base_uri "https://orta.xyz/api/"      if Rails.env.production?
-		base_uri "http://127.0.0.1:9292/api/" if Rails.env.development?
+		base_uri "https://api.africastalking.com"
 
 		class << self
 
 			def headers
-				OrtaApi.configuration.header.merge!(super)
+				Africastalking.configuration.header.merge!(super)
 			end
 
 			%w(get put post delete).each do |method|
@@ -22,7 +21,7 @@ module Africastalking
 					response  = perform_request Net::HTTP::Get,    path, json_body, &block if method.eql?('get')
 					response  = perform_request Net::HTTP::Delete, path, json_body, &block if method.eql?('delete')
 
-					OrtaApi::Response.new(code: response.code, headers: response.headers, body: response.body)
+					Africastalking::Response.new(code: response.code, headers: response.headers, body: response.body)
 				end
 			end
 		end
