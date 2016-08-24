@@ -9,7 +9,7 @@ module Africastalking
       end
 
       def fetch_queued_calls(phone_number, queue_name=nil)
-        post('/queueStatus', {"username" => Africastalking.config.username, "phoneNumbers" => phone_number})
+        post('/queueStatus', {"username" => Africastalking.config.username, "phoneNumbers" => phone_number, "queueName" => queue_name})
       end
 
       def upload_file(url)

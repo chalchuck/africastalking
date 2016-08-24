@@ -27,14 +27,12 @@ module Africastalking
 
     private
 
-      # TODO: SYMBOLS VS STRINGS
       def validate_attributes(attrbs, data)
         attrbs.each do |value|
           fail "#{value} can not be blank!" if value_present?(data, value)
         end
       end
 
-      # TODO: deal with whitespace
       def value_present?(data, value)
         data[value.to_sym].empty?
       end
