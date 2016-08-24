@@ -7,7 +7,8 @@ module Africastalking
     def initialize(params)
       @headers = params.dig(:headers)
       @code    = params.dig(:code)
-      @body    = JSON.parse(params.dig(:body))
+      @body    = params.dig(:body)
+      # @body    = JSON.parse(params.dig(:body))
     end
   end
 end

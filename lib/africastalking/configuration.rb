@@ -9,11 +9,9 @@ module Africastalking
 
 		def header
 		  {
-				username: username,
-				apikey: apikey,
 				"apikey" => apikey,
 				'Accept' => 'application/json',
-				'Content-Type'=> 'application/json'
+				'Content-Type'=> 'application/x-www-form-urlencoded'
 			}
 		end
 	end
