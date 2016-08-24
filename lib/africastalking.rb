@@ -5,6 +5,7 @@ require "africastalking/response"
 require "africastalking/airtime"
 require "africastalking/version"
 require "africastalking/user_data"
+require "africastalking/subscription"
 
 module Africastalking
 
