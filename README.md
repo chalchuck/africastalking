@@ -1,10 +1,12 @@
 # Africastalking
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/africastalking`. To experiment with that code, run `bin/console` for an interactive prompt.
-
 [![Code Climate](https://codeclimate.com/github/chalchuck/africastalking/badges/gpa.svg)](https://codeclimate.com/github/chalchuck/africastalking)
 
 [![Issue Count](https://codeclimate.com/github/chalchuck/africastalking/badges/issue_count.svg)](https://codeclimate.com/github/chalchuck/africastalking)
+
+
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/africastalking`. To experiment with that code, run `bin/console` for an interactive prompt.
+
+
 
 TODO: Delete this and the text above, and describe your gem
 

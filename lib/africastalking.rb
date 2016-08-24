@@ -7,7 +7,6 @@ require "africastalking/version"
 require "africastalking/user_data"
 require "africastalking/subscription"
 require "africastalking/talk"
-require "africastalking/AfricasTalkingGateway"
 
 module Africastalking
 
