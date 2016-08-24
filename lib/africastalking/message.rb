@@ -1,8 +1,7 @@
 module Africastalking
   class Message < Connection
-    # include Africastalking::MessageBuilder
-    # https://api.africastalking.com/version1/messaging
     class << self
+
       def fetch(last_received_id=0)
         get("/version1/messaging?username=#{Africastalking.config.username}&lastReceivedId=#{last_received_id}")
       end

@@ -312,6 +312,7 @@ class AfricasTalkingGateway
 	end
 
 	def executePost(url_, data_ = nil)
+		binding.pry
 		uri		 	     = URI.parse(url_)
 		http		     = Net::HTTP.new(uri.host, uri.port)
 		http.use_ssl     = true
