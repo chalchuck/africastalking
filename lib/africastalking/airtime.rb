@@ -2,10 +2,10 @@ module Africastalking
   class Airtime < Connection
     class << self
 
-      def send(recipients)
+      def buy_airtime(recipients)
         post('/version1/airtime/send', build_airtime(recipients))
       end
-      alias_method :buy, :send
+      alias_method :buy, :buy_airtime
 
     private
 

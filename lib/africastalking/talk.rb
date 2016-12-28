@@ -15,7 +15,6 @@ module Africastalking
       def upload_file(url)
         post('/mediaUpload', {"username" => Africastalking.config.username, 'url' => url})
       end
-
     end
   end
 end

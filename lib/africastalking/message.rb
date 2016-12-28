@@ -6,7 +6,7 @@ module Africastalking
         get("/version1/messaging?username=#{Africastalking.config.username}&lastReceivedId=#{last_received_id}")
       end
 
-      def send(recipients, message)
+      def deliver(recipients, message)
         post('/version1/messaging', build_message(recipients, message))
       end
 
@@ -39,7 +39,7 @@ module Africastalking
 
       def prepare_recipients(recipients)
         msg_recipients = Array.new
-        recipients.split(',').each {|r| msg_recipients << r.strip}
+        recipients.split(',').each {|recipient| msg_recipients << recipient.strip}
         msg_recipients.join(', ')
       end
 
