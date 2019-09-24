@@ -1,15 +1,16 @@
-require "africastalking/configuration"
-require "africastalking/connection"
-require "africastalking/message"
-require "africastalking/response"
-require "africastalking/airtime"
-require "africastalking/version"
-require "africastalking/user_data"
-require "africastalking/subscription"
-require "africastalking/talk"
+# frozen_string_literal: true
+
+require 'africastalking/configuration'
+require 'africastalking/connection'
+require 'africastalking/message'
+require 'africastalking/response'
+require 'africastalking/airtime'
+require 'africastalking/version'
+require 'africastalking/user_data'
+require 'africastalking/subscription'
+require 'africastalking/talk'
 
 module Africastalking
-
   class << self
     attr_writer :configuration
 
@@ -20,6 +21,6 @@ module Africastalking
     def configuration
       @configuration ||= Configuration.new
     end
-    alias_method :config, :configuration
+    alias config configuration
   end
 end

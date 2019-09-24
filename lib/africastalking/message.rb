@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 module Africastalking
   class Message < Connection
     class << self
-
-      def fetch(last_received_id=0)
+      def fetch(last_received_id = 0)
         get("/version1/messaging?username=#{Africastalking.config.username}&lastReceivedId=#{last_received_id}")
       end
 
@@ -18,28 +19,35 @@ module Africastalking
         post('/version1/messaging', build_enqueued_messages(data))
       end
 
-    private
+      private
 
       def build_message(recipients, message)
-        {username: Africastalking.config.username, message: message, to: prepare_recipients(recipients)}
+        {
+          username: Africastalking.config.username,
+          message: message,
+          to: prepare_recipients(recipients)
+        }
       end
 
       def premium_params(data)
         {
           retryDurationInHours: data.fetch(:retryDurationInHours, 1),
-          enqueue: data.fetch(:enqueue, 0), linkId: data.fetch(:linkId, nil), keyword: data.fetch(:keyword, nil)
+          enqueue: data.fetch(:enqueue, 0), linkId: data.fetch(:linkId, nil),
+          keyword: data.fetch(:keyword, nil)
         }
       end
 
       def enqueue_params(data)
         {
-          bulkSMSMode: data.fetch(:bulkSMSMode, 1), sender: data.fetch(:sender, nil), enqueue: data.fetch(:enqueue, 1)
+          bulkSMSMode: data.fetch(:bulkSMSMode, 1),
+          sender: data.fetch(:sender, nil),
+          enqueue: data.fetch(:enqueue, 1)
         }
       end
 
       def prepare_recipients(recipients)
-        msg_recipients = Array.new
-        recipients.split(',').each {|recipient| msg_recipients << recipient.strip}
+        msg_recipients = []
+        recipients.split(',').each { |recipient| msg_recipients << recipient.strip }
         msg_recipients.join(', ')
       end
 
